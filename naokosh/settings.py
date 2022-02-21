@@ -132,3 +132,6 @@ if not DEBUG:
 else:
     STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOGIN_URL = 'home:login'
+LOGIN_REDIRECT_URL = 'home:index'

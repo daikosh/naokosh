@@ -1,0 +1,33 @@
+{% extends "register/base.html" %}
+{% load static %}
+
+{% block main %}
+
+
+<!-- About-->
+<section class="fh5co-couple text-center" id="home">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <img class="img-responsive", src="{% static 'naokosh/images/header.jpg' %}" alt="">
+            <p class="mt-5">
+                こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。
+            </p>
+        </div>
+        <form action="" method="POST">
+            <div class="card">
+                <div class="card-body">
+                    {{ form.non_field_errors }}
+                    {% for field in form %}
+                        {{ field }}
+                        {{ field.errors }}
+                        <hr>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-dark" >ログイン</button>
+                    <input type="hidden" name="next" value="{{ next }}" />
+                    {% csrf_token %}
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}
